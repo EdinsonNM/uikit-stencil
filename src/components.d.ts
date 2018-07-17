@@ -60,6 +60,45 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface UikitButton {
+      'fullwidth': boolean;
+      'primary': boolean;
+      'secondary': boolean;
+      'warning': boolean;
+    }
+  }
+
+  interface HTMLUikitButtonElement extends StencilComponents.UikitButton, HTMLStencilElement {}
+
+  var HTMLUikitButtonElement: {
+    prototype: HTMLUikitButtonElement;
+    new (): HTMLUikitButtonElement;
+  };
+  interface HTMLElementTagNameMap {
+    'uikit-button': HTMLUikitButtonElement;
+  }
+  interface ElementTagNameMap {
+    'uikit-button': HTMLUikitButtonElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'uikit-button': JSXElements.UikitButtonAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface UikitButtonAttributes extends HTMLAttributes {
+      'fullwidth'?: boolean;
+      'primary'?: boolean;
+      'secondary'?: boolean;
+      'warning'?: boolean;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
 
 export declare function defineCustomElements(window: any): void;

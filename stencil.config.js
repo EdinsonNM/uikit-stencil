@@ -1,5 +1,5 @@
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'uikit-pacific-components',
   outputTargets:[
     {
       type: 'dist'
