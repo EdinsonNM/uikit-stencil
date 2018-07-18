@@ -2,7 +2,7 @@ import { Component, Prop } from '@stencil/core';
 
 @Component({
     tag: 'uikit-button',
-    styleUrl: 'uikit-button.css',
+    styleUrl: 'uikit-button.scss',
     shadow: true,
     host: {
         role: 'button'
@@ -17,11 +17,11 @@ export class UikitButton {
     render() {
         const styles = ["btn"];
         if(this.color) styles.push(`btn-${this.outline ? 'outline-': ''}${this.color}`);
-        if(this.fullwidth) styles.push(`btn-block`);
-        if(this.fab) styles.push(`btn-fab`);
-        if(this.disabled) styles.push(`btn-disabled`);
+        if(this.fullwidth) styles.push('btn-block');
+        if(this.fab) styles.push('btn-fab');
+        if(this.disabled) styles.push('btn-disabled');
         return (
-        <button class={styles.join(' ')}>
+        <button class={styles.join(' ')} disabled={!!(this.disabled)}>
             <slot />
         </button>
         );

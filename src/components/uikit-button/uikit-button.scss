@@ -1,0 +1,104 @@
+$primary:   (#00af3f, #039036) !default;
+$secondary:    (#0099CC, #008bb9) !default;
+$warning:  (#ff6319, #ef5e19) !default;
+$danger:     (#ff0048, #d9003d) !default;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "warning": $warning,
+    "danger": $danger,
+);
+
+:host{
+    display: inline-block;
+}
+:host([fullwidth]){
+    display: block;
+}
+
+.btn {
+    font-family:var(--font-family-uikit, 'Arial');
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1.5px solid transparent;
+    padding: 6px .75rem;
+    font-size: 18px;
+    line-height: 2;
+    border-radius: 2px;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+.btn.disabled, .btn:disabled {
+    color: white;
+    opacity: .65;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+    background-color: #c8c7c7!important;
+    border-color: #c8c7c7!important;
+    cursor: default;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-fab {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding: 0;
+    font-size: 12px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 15px;
+}
+
+@each $color, $value in $theme-colors {
+    $originColor: nth($value, 1);
+    $hoverColor: nth($value, 2);
+    .btn-#{$color} {
+        color: #fff;
+        background-color: $originColor;
+        border-color: $originColor;
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+    }
+    .btn-#{$color}.active, .btn-#{$color}:active{
+        background-color: $originColor;
+        background-image: none;
+        border-color: $originColor;
+    }
+    .btn-#{$color}.focus, .btn-#{$color}:focus {
+        outline: 0;
+        box-shadow: 0 0 0 3px rgba($originColor,.5);
+    }
+    .btn-#{$color}:hover {
+        color: #fff;
+        background-color: $hoverColor;
+        border-color: $hoverColor;
+    }
+
+}
+@each $color, $value in $theme-colors {
+    $originColor: nth($value, 1);
+    $hoverColor: nth($value, 2);
+    .btn-outline-#{$color} {
+        color: $originColor;
+        background-color: white;
+        background-image: none;
+        border-color: $originColor;
+        background-color: #fff;
+    }
+    .btn-outline-#{$color}.focus, .btn-outline-#{$color}:focus {
+        outline: 0;
+        box-shadow: 0 0 0 3px rgba($originColor,.5);
+    }
+    .btn-outline-#{$color}:hover {
+        background-color: $originColor;
+        color: white;
+    }
+}
