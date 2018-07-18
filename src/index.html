@@ -4,15 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
-
+  <script src="/build/uikit-pacific-components.js"></script>
+  <link rel="stylesheet" href="/build/uikit-pacific-components.css">
 </head>
 <body>
+    <div>
+        <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+        <uikit-button fullwidth  color="primary" outline>Hello, World! I'm Stencil 'Don't call me a framework' JS</uikit-button>
+        <uikit-button>Default button</uikit-button>
+    </div>
+    <div>
+        <uikit-button color="primary">My color="primary" button</uikit-button>
+        <uikit-button color="secondary">My color="secondary" button</uikit-button>
+        <uikit-button color="warning">My color="warning" button</uikit-button>
+        <uikit-button color="danger">My warning button</uikit-button>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  <uikit-button primary>My primary button</uikit-button>
-  <uikit-button secondary>My secondary button</uikit-button>
-  <uikit-button warning fullwidth>My warning button</uikit-button>
+    </div>
+    <div>
+        <uikit-button color="primary" outline>My primary outline button</uikit-button>
+        <uikit-button color="secondary" outline>My primary outline button</uikit-button>
+        <uikit-button color="warning" outline>My primary outline button</uikit-button>
+        <uikit-button color="danger" outline>My primary outline button</uikit-button>
+    </div>
+    <div>
+        <uikit-button color="danger" fullwidth>My primary button</uikit-button>
+        <uikit-button color="primary" fab>+</uikit-button>
+        <uikit-button color="secondary" fab>+</uikit-button>
+        <uikit-button color="warning" fab>+</uikit-button>
+        <uikit-button color="danger" fab>+</uikit-button>
+    </div>
     <button class="btn btn-primary">hola</button>
 </body>
 </html>

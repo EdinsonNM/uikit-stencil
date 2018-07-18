@@ -65,10 +65,11 @@ declare global {
 
   namespace StencilComponents {
     interface UikitButton {
+      'color': string;
+      'disabled': boolean;
+      'fab': boolean;
       'fullwidth': boolean;
-      'primary': boolean;
-      'secondary': boolean;
-      'warning': boolean;
+      'outline': boolean;
     }
   }
 
@@ -91,10 +92,11 @@ declare global {
   }
   namespace JSXElements {
     export interface UikitButtonAttributes extends HTMLAttributes {
+      'color'?: string;
+      'disabled'?: boolean;
+      'fab'?: boolean;
       'fullwidth'?: boolean;
-      'primary'?: boolean;
-      'secondary'?: boolean;
-      'warning'?: boolean;
+      'outline'?: boolean;
     }
   }
 }
