@@ -1,0 +1,116 @@
+$primary:   #00af3f !default;
+$secondary:    #0099CC !default;
+$warning:  #ff6319  !default;
+$danger:     #ff0048 !default;
+
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icon-innovacion-pacifico' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-switch {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    height: 80px;
+    font-family: var(--font-family-uikit-app);
+
+}
+
+.btn-switch input {display:none;}
+
+.btn-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.btn-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 80px;
+    width: 80px;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+
+}
+
+.btn-switch input:checked + .slider {
+    background-color: white;
+}
+
+.btn-switch input:focus + .slider {
+    box-shadow: 0 0 1px white;
+}
+
+.btn-switch input:not(:checked) + .slider:before {
+    -webkit-transform: translateX(80px);
+    -ms-transform: translateX(80px);
+    transform: translateX(80px);
+
+}
+
+.btn-switch .buttons {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+}
+.btn-switch .buttons > div {
+    flex: 1;
+    text-align: center;
+    padding-top: 5px;
+
+}
+.btn-switch .buttons > div:nth-child(1) {
+    border-left: solid 1px #bbbbbb;
+    border-top: solid 1px #bbbbbb;
+    border-bottom: solid 1px #bbbbbb;
+}
+.btn-switch .buttons > div:nth-child(2) {
+    border-right: solid 1px #bbbbbb;
+    border-top: solid 1px #bbbbbb;
+    border-bottom: solid 1px #bbbbbb;
+}
+.btn-switch input:checked + .slider + .buttons > div:nth-child(1){
+    background-color: $primary;
+    color: white;
+    border-right: solid 1px $primary;
+    border-top: solid 1px $primary;
+    border-bottom: solid 1px $primary;
+}
+.btn-switch input:not(:checked) + .slider + .buttons > div:nth-child(2){
+    background-color: $danger;
+    color: white;
+    border-right: solid 1px $danger;
+    border-top: solid 1px $danger;
+    border-bottom: solid 1px $danger;
+}
+.btn-switch > .buttons > div > uikit-icon {
+    margin-top: 10px;
+    display: block;
+}

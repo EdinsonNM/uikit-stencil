@@ -29,11 +29,26 @@
     </div>
     <div>
         <uikit-button color="danger" fullwidth>My primary button</uikit-button>
+        <uikit-button color="primary">
+            <uikit-icon name="add"></uikit-button> Con icon...
+        </uikit-button>
         <uikit-button color="primary" fab>+</uikit-button>
         <uikit-button color="secondary" fab>+</uikit-button>
         <uikit-button color="warning" fab>+</uikit-button>
         <uikit-button color="danger" fab>+</uikit-button>
     </div>
+    <div>
+        <uikit-button-toggle id="btnToggle" on-toggle="hola()" checked></uikit-button-toggle>
+    </div>
     <button class="btn btn-primary">hola</button>
 </body>
+<script>
+    /*document.getElementById('btnToggle').addEventListener('onToggle', (e) => {
+        console.log(e);
+        alert('hola listener' + e);
+    });*/
+    const hola = (e) => {
+        alert('hola');
+    }
+</script>
 </html>

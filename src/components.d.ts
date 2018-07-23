@@ -64,6 +64,44 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface UikitButtonToggle {
+      'checked': boolean;
+      'labelAccept': string;
+      'labelReject': string;
+    }
+  }
+
+  interface HTMLUikitButtonToggleElement extends StencilComponents.UikitButtonToggle, HTMLStencilElement {}
+
+  var HTMLUikitButtonToggleElement: {
+    prototype: HTMLUikitButtonToggleElement;
+    new (): HTMLUikitButtonToggleElement;
+  };
+  interface HTMLElementTagNameMap {
+    'uikit-button-toggle': HTMLUikitButtonToggleElement;
+  }
+  interface ElementTagNameMap {
+    'uikit-button-toggle': HTMLUikitButtonToggleElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'uikit-button-toggle': JSXElements.UikitButtonToggleAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface UikitButtonToggleAttributes extends HTMLAttributes {
+      'checked'?: boolean;
+      'labelAccept'?: string;
+      'labelReject'?: string;
+      'onOnToggle'?: (event: CustomEvent) => void;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface UikitButton {
       'color': string;
       'disabled': boolean;
@@ -97,6 +135,39 @@ declare global {
       'fab'?: boolean;
       'fullwidth'?: boolean;
       'outline'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface UikitIcon {
+      'name': any;
+    }
+  }
+
+  interface HTMLUikitIconElement extends StencilComponents.UikitIcon, HTMLStencilElement {}
+
+  var HTMLUikitIconElement: {
+    prototype: HTMLUikitIconElement;
+    new (): HTMLUikitIconElement;
+  };
+  interface HTMLElementTagNameMap {
+    'uikit-icon': HTMLUikitIconElement;
+  }
+  interface ElementTagNameMap {
+    'uikit-icon': HTMLUikitIconElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'uikit-icon': JSXElements.UikitIconAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface UikitIconAttributes extends HTMLAttributes {
+      'name'?: any;
     }
   }
 }
