@@ -1,4 +1,9 @@
 
+:host{
+    padding: auto;
+    margin: auto;
+    display: inline-block;
+}
 [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icon-innovacion-pacifico' !important;
@@ -12,6 +17,7 @@
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: block;
 }
 
 

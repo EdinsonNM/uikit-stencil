@@ -64,10 +64,51 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface UikitButtonSelector {
+      'colorSelected': string;
+      'onSelect': (e: number) => void;
+      'selected': number;
+    }
+  }
+
+  interface HTMLUikitButtonSelectorElement extends StencilComponents.UikitButtonSelector, HTMLStencilElement {}
+
+  var HTMLUikitButtonSelectorElement: {
+    prototype: HTMLUikitButtonSelectorElement;
+    new (): HTMLUikitButtonSelectorElement;
+  };
+  interface HTMLElementTagNameMap {
+    'uikit-button-selector': HTMLUikitButtonSelectorElement;
+  }
+  interface ElementTagNameMap {
+    'uikit-button-selector': HTMLUikitButtonSelectorElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'uikit-button-selector': JSXElements.UikitButtonSelectorAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface UikitButtonSelectorAttributes extends HTMLAttributes {
+      'colorSelected'?: string;
+      'onOnselect'?: (event: CustomEvent) => void;
+      'onSelect'?: (e: number) => void;
+      'selected'?: number;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface UikitButtonToggle {
       'checked': boolean;
+      'iconAccept': string;
+      'iconReject': string;
       'labelAccept': string;
       'labelReject': string;
+      'onToggle': (e) => void;
     }
   }
 
@@ -91,9 +132,12 @@ declare global {
   namespace JSXElements {
     export interface UikitButtonToggleAttributes extends HTMLAttributes {
       'checked'?: boolean;
+      'iconAccept'?: string;
+      'iconReject'?: string;
       'labelAccept'?: string;
       'labelReject'?: string;
-      'onOnToggle'?: (event: CustomEvent) => void;
+      'onOntoggle'?: (event: CustomEvent) => void;
+      'onToggle'?: (e) => void;
     }
   }
 }
@@ -108,6 +152,7 @@ declare global {
       'fab': boolean;
       'fullwidth': boolean;
       'outline': boolean;
+      'size': string;
     }
   }
 
@@ -135,6 +180,7 @@ declare global {
       'fab'?: boolean;
       'fullwidth'?: boolean;
       'outline'?: boolean;
+      'size'?: string;
     }
   }
 }

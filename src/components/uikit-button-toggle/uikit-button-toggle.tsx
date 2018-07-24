@@ -10,6 +10,8 @@ export class UikitButtonToggle {
     @Prop() checked: boolean;
     @Prop() labelAccept: string = 'Aprobar';
     @Prop() labelReject: string = 'Rechazar';
+    @Prop() iconAccept: string = 'accept';
+    @Prop() iconReject: string = 'state-reject';
     @Prop() onToggle: (e) => void = () => {};
     @State() isChecked: boolean;
     @Event() ontoggle  : EventEmitter;
@@ -38,15 +40,11 @@ export class UikitButtonToggle {
                 <span class="slider" />
                 <div class="buttons">
                     <div role="button" onClick={() => this.on()}>
-                        <slot name="icon-accept">
-                            <uikit-icon name="accept"></uikit-icon>
-                        </slot>
+                        <uikit-icon name={this.iconAccept}></uikit-icon>
                         {this.labelAccept}
                     </div>
                     <div role="button" onClick={() => this.off()}>
-                        <slot name="icon-reject">
-                            <uikit-icon name="state-reject"></uikit-icon>
-                        </slot>
+                        <uikit-icon name={this.iconReject}></uikit-icon>
                         {this.labelReject}
                     </div>
                 </div>
