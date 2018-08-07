@@ -12,9 +12,10 @@ export class UikitButtonToggle {
     @Prop() labelReject: string = 'Rechazar';
     @Prop() iconAccept: string = 'accept';
     @Prop() iconReject: string = 'state-reject';
-    @Prop() onToggle: (e) => void = () => {};
     @State() isChecked: boolean;
-    @Event() ontoggle  : EventEmitter;
+    @Event({}) toggle  : EventEmitter;
+
+
     componentWillLoad() {
         this.isChecked = this.checked;
     }
@@ -25,13 +26,11 @@ export class UikitButtonToggle {
     }
     on(){
         this.isChecked = true;
-        this.ontoggle.emit({ checked: this.isChecked });
-        this.onToggle(this.isChecked);
+        this.toggle.emit({ checked: this.isChecked });
     }
     off(){
         this.isChecked = false;
-        this.ontoggle.emit({ checked: this.isChecked });
-        this.onToggle(this.isChecked);
+        this.toggle.emit({ checked: this.isChecked });
     }
     render() {
         return (

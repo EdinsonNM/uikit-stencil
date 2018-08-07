@@ -1,5 +1,4 @@
-import { EventEmitter } from '../../../dist/types/stencil.core.d';
-import { Component, Element, Prop, Watch, Event } from '@stencil/core';
+import { Component, Element, Prop, Watch, Event, EventEmitter } from '@stencil/core';
 
 
 @Component({
@@ -14,7 +13,7 @@ export class UikitButtonSelector {
     @Event() onselect  : EventEmitter;
 
     @Watch('selected')
-    watchHandler(newValue: number) {
+    watchHandlerSelected(newValue: number) {
         const buttons = this.listSelector.querySelectorAll('uikit-button');
         if(newValue < buttons.length)
             buttons[newValue].setAttribute('color', this.colorSelected);
@@ -24,6 +23,9 @@ export class UikitButtonSelector {
         buttons.forEach((btn, index) => {
             btn.addEventListener('click', this.selectItem.bind(this, btn, index));
         });
+        if(buttons.length && this.selected >= 0 && this.selected < buttons.length){
+            this.selectItem(buttons[0], 0);
+        }
     }
     selectItem(btn, index){
         const buttons = Array.from(this.listSelector.querySelectorAll('uikit-button'));

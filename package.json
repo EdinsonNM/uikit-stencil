@@ -1,6 +1,6 @@
 {
     "name": "uikit-pacific-components",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "Pacific Component UIKIT",
     "module": "dist/esm/index.js",
     "main": "dist/uikit-pacific-components.js",

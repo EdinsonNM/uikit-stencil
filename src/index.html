@@ -47,23 +47,33 @@
         <uikit-button color="danger" fab>+</uikit-button>
     </div>
     <div>
-        <uikit-button-toggle id="btnToggle" on-toggle="hola()" icon-accept="camera" checked></uikit-button-toggle>
+        <uikit-button-toggle id="btnToggle" onToggle="hola" icon-accept="camera" checked></uikit-button-toggle>
     </div>
     <div>
-        <uikit-button-selector id="selector" selected="0" color-selected="primary">
-            <uikit-button>text uno</uikit-button>
-            <uikit-button>text uno</uikit-button>
-            <uikit-button>text uno</uikit-button>
+        <uikit-button-selector id="selector" selected="0" color-selected="warning">
+            <uikit-button>boton uno</uikit-button>
+            <uikit-button>boton dos</uikit-button>
+            <uikit-button>boton tres</uikit-button>
+            <uikit-button>boton cuatro</uikit-button>
         </uikit-button-selector>
     </div>
-    <button class="btn btn-primary">hola</button>
+    <uikit-button color="primary" id="btn" class="btn btn-primary">Abrir modal</uikit-button>
+    <uikit-modal id="myModal">
+        jojojo
+    </uikit-modal>
 </body>
 <script>
-    document.getElementById('selector').addEventListener('onselect', (e) => {
+    document.getElementById('btnToggle').addEventListener('toggle', (e) => {
         console.log(e.detail);
     });
     const hola = (e) => {
         alert('hola');
     }
+
+    document.querySelector('#btn').addEventListener('click', function(e){
+        debugger;
+        const modal = document.querySelector('#myModal');
+        modal.open();
+    });
 </script>
 </html>

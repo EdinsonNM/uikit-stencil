@@ -14,5 +14,6 @@ exports.config = {
         type: 'www',
         serviceWorker: false,
         }
-    ]
+    ],
+    collectionDir: 'dist'
 };

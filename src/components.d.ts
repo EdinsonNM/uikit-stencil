@@ -108,7 +108,6 @@ declare global {
       'iconReject': string;
       'labelAccept': string;
       'labelReject': string;
-      'onToggle': (e) => void;
     }
   }
 
@@ -136,8 +135,7 @@ declare global {
       'iconReject'?: string;
       'labelAccept'?: string;
       'labelReject'?: string;
-      'onOntoggle'?: (event: CustomEvent) => void;
-      'onToggle'?: (e) => void;
+      'onToggle'?: (event: CustomEvent) => void;
     }
   }
 }
@@ -181,6 +179,39 @@ declare global {
       'fullwidth'?: boolean;
       'outline'?: boolean;
       'size'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface UikitCheckbox {
+
+    }
+  }
+
+  interface HTMLUikitCheckboxElement extends StencilComponents.UikitCheckbox, HTMLStencilElement {}
+
+  var HTMLUikitCheckboxElement: {
+    prototype: HTMLUikitCheckboxElement;
+    new (): HTMLUikitCheckboxElement;
+  };
+  interface HTMLElementTagNameMap {
+    'uikit-checkbox': HTMLUikitCheckboxElement;
+  }
+  interface ElementTagNameMap {
+    'uikit-checkbox': HTMLUikitCheckboxElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'uikit-checkbox': JSXElements.UikitCheckboxAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface UikitCheckboxAttributes extends HTMLAttributes {
+
     }
   }
 }
